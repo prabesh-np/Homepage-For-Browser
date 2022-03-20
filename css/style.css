@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
+* {
+   box-sizing: border-box;
+}
+
+::placeholder {
+   color: #000;
+   opacity: 1;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   font-family: "Satisfy", cursive;
+   background-color: #000;
+   height: 100vh;
+   overflow: hidden;
+}
+
+svg {
+   color: #fff;
+}
+
+svg text {
+   font-size: 8rem;
+   stroke-width: 3px;
+   fill: transparent;
+   stroke: chartreuse;
+   letter-spacing: 5px;
+   animation: effect 6s ease-in-out alternate;
+}
+
+@keyframes effect {
+   0% {
+      stroke-dasharray: 0 70%;
+   }
+   100% {
+      stroke-dasharray: 50% 0;
+      stroke-dashoffset: 10%;
+   }
+}
+
+.container {
+   position: absolute;
+   top: 5%;
+   left: 5%;
+   border: 5px solid chartreuse;
+   width: 300px;
+   height: 280px;
+   font-size: 2.5rem;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   box-shadow: 0 0 5px chartreuse, 0 0 10px chartreuse, 0 0 15px chartreuse;
+}
+
+.time {
+   font-size: 2.5rem;
+   font-weight: bold;
+   color: chartreuse;
+}
+
+.blink-colon {
+   animation: blink 1s infinite linear;
+}
+
+@keyframes blink {
+   0%,
+   100% {
+      opacity: 1;
+   }
+   30% {
+      opacity: 0.4;
+   }
+}
+
+.date-container {
+   margin-top: 6px;
+   font-size: 2rem;
+   color: chartreuse;
+   font-weight: bold;
+}
+
+.link-container {
+   position: absolute;
+   right: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   width: 80px;
+   height: 100vh;
+}
+
+.link-container svg {
+   transform: scale(1.6);
+}
+
+.icon {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50%;
+   position: relative;
+   padding: 15px;
+   margin: 10px;
+   cursor: pointer;
+}
+
+/* Google Search CSS */
+
+.search {
+   position: absolute;
+   display: inline-block;
+   border: 3px solid chartreuse;
+   width: 600px;
+   height: 80px;
+   left: 60%;
+}
+
+.duck {
+   top: 35%;
+}
+
+.gogle {
+   top: 50%;
+}
+
+input {
+   position: relative;
+   float: right;
+   width: 85%;
+   height: 70%;
+   margin: 10px;
+   padding: 10px;
+   font-size: 1.8rem;
+   border: 2px solid #000;
+   font-family: inherit;
+   border-radius: 0 12px;
+   background-color: #f2f2f2;
+   box-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 15px #000;
+}
+
+input:hover {
+   background-color: #fff;
+   border: none;
+}
+
+input:focus {
+   color: chartreuse;
+   background-color: transparent;
+   border-style: none;
+   outline: none;
+}
+
+label {
+   position: absolute;
+   display: inline-block;
+   top: 60%;
+   left: 8%;
+}
