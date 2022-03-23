@@ -65,3 +65,26 @@ function updateTime() {
 
    dayEl.innerHTML = day;
 }
+
+// Fetching Random Quotes From API
+
+const randomQuote = document.querySelector("#random-quote");
+
+let apiQuotes = [];
+
+const newQuote = () => {
+   let idx = Math.floor(Math.random() * apiQuotes.length);
+   const quote = apiQuotes[idx];
+   randomQuote.textContent = `" ${quote.text} "`;
+};
+
+async function getQuotes() {
+   const apiUrl = "https://type.fit/api/quotes";
+   try {
+      const res = await fetch(apiUrl);
+      apiQuotes = await res.json();
+      newQuote();
+   } catch (err) {}
+}
+
+getQuotes();
